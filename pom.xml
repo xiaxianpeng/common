@@ -26,6 +26,7 @@
     <!--子模块-->
     <modules>
         <module>cache</module>
+        <module>util</module>
     </modules>
 
     <dependencyManagement>
