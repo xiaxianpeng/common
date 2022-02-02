@@ -51,9 +51,9 @@ public class CacheAspect {
         CacheApi cacheApi = CacheUtil.getCacheAPI(name);
         Object result = cacheApi.get(key, method.getReturnType());
         log.debug("hit cache,key={},value={}", key, result);
-        if(result!=null){
+        if (result != null) {
             return result;
         }
-        return null;
+        return CacheUtil.invoke(point, name, key);
     }
 }
