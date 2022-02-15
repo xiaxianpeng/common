@@ -1,6 +1,6 @@
 package com.example.common.jvmmonitor.config;
 
-import com.example.common.jvmmonitor.annotation.RefreshAble;
+import com.example.common.base.annotation.RefreshAble;
 import com.example.common.jvmmonitor.collector.Collector;
 import com.example.common.jvmmonitor.collector.impl.ClassLoading;
 import com.example.common.jvmmonitor.collector.impl.Gc;
@@ -10,7 +10,7 @@ import com.example.common.jvmmonitor.collector.impl.NioBufferPool;
 import com.example.common.jvmmonitor.collector.impl.Os;
 import com.example.common.jvmmonitor.collector.impl.Thread;
 import com.example.common.jvmmonitor.collector.impl.Tomcat;
-import com.example.common.jvmmonitor.iface.ConfigureAble;
+import com.example.common.base.iface.ConfigureAble;
 import com.example.common.util.NamedThreadFactory;
 import java.util.List;
 import java.util.Map;

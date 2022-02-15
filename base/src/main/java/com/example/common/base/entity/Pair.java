@@ -1,4 +1,4 @@
-package com.example.common.jvmmonitor.entity;
+package com.example.common.base.entity;
 
 import lombok.Data;
 

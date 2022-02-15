@@ -1,4 +1,4 @@
-package com.example.common.jvmmonitor.iface;
+package com.example.common.base.iface;
 
 /**
  * @author xianpeng.xia

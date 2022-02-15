@@ -28,6 +28,7 @@
 
   <!--子模块-->
   <modules>
+    <module>base</module>
     <module>cache</module>
     <module>util</module>
     <module>jvm-monitor</module>
@@ -85,7 +86,11 @@
         <version>${project.version}</version>
       </dependency>
 
-
+      <dependency>
+        <groupId>com.example.common</groupId>
+        <artifactId>base</artifactId>
+        <version>${project.version}</version>
+      </dependency>
       <!--子模块end-->
 
       <!--jackson start-->

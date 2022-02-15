@@ -2,7 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
   <parent>
     <groupId>com.example</groupId>
     <artifactId>common</artifactId>
@@ -10,12 +9,11 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-
   <groupId>com.example.common</groupId>
-  <artifactId>jvm-monitor</artifactId>
+  <artifactId>base</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>jvm-monitor</name>
-  <description>JVM监控</description>
+  <name>base</name>
+  <description>base</description>
 
   <properties>
     <java.version>1.8</java.version>
@@ -33,28 +31,10 @@
       <scope>test</scope>
     </dependency>
 
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-pool2</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>com.example.common</groupId>
-      <artifactId>util</artifactId>
-      <scope>compile</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>com.example.common</groupId>
-      <artifactId>base</artifactId>
-      <scope>compile</scope>
-    </dependency>
-
 
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <scope>provided</scope>
     </dependency>
 
   </dependencies>

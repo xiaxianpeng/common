@@ -1,7 +1,7 @@
 package com.example.common.jvmmonitor.collector.impl;
 
 import com.example.common.jvmmonitor.collector.Collector;
-import com.example.common.jvmmonitor.entity.Pair;
+import com.example.common.base.entity.Pair;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Supplier;
