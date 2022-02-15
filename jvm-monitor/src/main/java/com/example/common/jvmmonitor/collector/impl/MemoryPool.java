@@ -17,7 +17,8 @@ public enum MemoryPool implements Collector {
     /**
      * 实例
      */
-    INSTACE;
+    INSTANCE;
+
     private List<MemoryPoolMXBean> memoryPoolMXBeans = ManagementFactory.getMemoryPoolMXBeans();
     private static final String PREFIX = "JVM.MemoryPool.";
 
