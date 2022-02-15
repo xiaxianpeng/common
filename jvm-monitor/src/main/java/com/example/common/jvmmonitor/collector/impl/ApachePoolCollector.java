@@ -1,10 +1,10 @@
 package com.example.common.jvmmonitor.collector.impl;
 
 import com.example.common.jvmmonitor.collector.Collector;
+import com.example.common.jvmmonitor.entity.Pair;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Supplier;
-import javafx.util.Pair;
 import org.apache.commons.pool2.impl.GenericObjectPool;
 
 /**
@@ -44,7 +44,7 @@ public class ApachePoolCollector implements Collector {
     @Override
     public Map<String, String> tags() {
         Map<String, String> map = new HashMap<>(1);
-        map.put(tagSupplier.get().getKey(), tagSupplier.get().getValue());
+        map.put(tagSupplier.get().getK(), tagSupplier.get().getV());
         return map;
     }
 

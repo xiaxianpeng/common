@@ -1,125 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <parent>
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.6.3</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+
+  <groupId>com.example</groupId>
+  <artifactId>common</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>common</name>
+  <description>common project</description>
+  <packaging>pom</packaging>
+
+  <properties>
+    <java.version>1.8</java.version>
+    <springboot.version>2.6.3</springboot.version>
+    <caffeine.version>2.9.3</caffeine.version>
+    <lombok.version>1.18.20</lombok.version>
+    <jedis.version>3.3.0</jedis.version>
+    <jackson.version>2.11.0</jackson.version>
+    <commons.lang3.version>3.12.0</commons.lang3.version>
+  </properties>
+
+  <!--子模块-->
+  <modules>
+    <module>cache</module>
+    <module>util</module>
+    <module>jvm-monitor</module>
+  </modules>
+
+  <dependencyManagement>
+    <dependencies>
+      <!--spring boot start-->
+      <dependency>
         <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.6.3</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
+        <artifactId>spring-boot-starter</artifactId>
+        <version>${springboot.version}</version>
+      </dependency>
 
-    <groupId>com.example</groupId>
-    <artifactId>common</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>common</name>
-    <description>common project</description>
-    <packaging>pom</packaging>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <version>${springboot.version}</version>
+        <scope>test</scope>
+      </dependency>
 
-    <properties>
-        <java.version>1.8</java.version>
-        <springboot.version>2.6.3</springboot.version>
-        <caffeine.version>2.9.3</caffeine.version>
-        <lombok.version>1.18.20</lombok.version>
-        <jedis.version>3.3.0</jedis.version>
-        <jackson.version>2.11.0</jackson.version>
-        <commons.lang3.version>3.12.0</commons.lang3.version>
-    </properties>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-aop</artifactId>
+        <version>${springboot.version}</version>
+      </dependency>
+      <!--spring boot end-->
 
-    <!--子模块-->
-    <modules>
-        <module>cache</module>
-        <module>util</module>
-        <module>jvm-monitor</module>
-    </modules>
+      <!-- https://mvnrepository.com/artifact/com.github.ben-manes.caffeine/caffeine -->
+      <dependency>
+        <groupId>com.github.ben-manes.caffeine</groupId>
+        <artifactId>caffeine</artifactId>
+        <version>${caffeine.version}</version>
+      </dependency>
 
-    <dependencyManagement>
-        <dependencies>
-            <!--spring boot start-->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter</artifactId>
-                <version>${springboot.version}</version>
-            </dependency>
+      <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <scope>provided</scope>
+        <version>${lombok.version}</version>
+      </dependency>
 
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-test</artifactId>
-                <version>${springboot.version}</version>
-                <scope>test</scope>
-            </dependency>
+      <!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
+      <dependency>
+        <groupId>redis.clients</groupId>
+        <artifactId>jedis</artifactId>
+        <version>${jedis.version}</version>
+      </dependency>
 
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-aop</artifactId>
-                <version>${springboot.version}</version>
-            </dependency>
-            <!--spring boot end-->
+      <!--子模块start-->
+      <dependency>
+        <groupId>com.example.common</groupId>
+        <artifactId>util</artifactId>
+        <version>${project.version}</version>
+      </dependency>
 
-            <!-- https://mvnrepository.com/artifact/com.github.ben-manes.caffeine/caffeine -->
-            <dependency>
-                <groupId>com.github.ben-manes.caffeine</groupId>
-                <artifactId>caffeine</artifactId>
-                <version>${caffeine.version}</version>
-            </dependency>
 
-            <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <scope>provided</scope>
-                <version>${lombok.version}</version>
-            </dependency>
+      <!--子模块end-->
 
-            <!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
-            <dependency>
-                <groupId>redis.clients</groupId>
-                <artifactId>jedis</artifactId>
-                <version>${jedis.version}</version>
-            </dependency>
+      <!--jackson start-->
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${jackson.version}</version>
+      </dependency>
 
-            <dependency>
-                <groupId>com.example.common</groupId>
-                <artifactId>util</artifactId>
-                <version>${project.version}</version>
-            </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-core</artifactId>
+        <version>${jackson.version}</version>
+      </dependency>
 
-            <!--jackson start-->
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-databind</artifactId>
-                <version>${jackson.version}</version>
-            </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-annotations</artifactId>
+        <version>${jackson.version}</version>
+      </dependency>
+      <!--jackson end-->
 
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-core</artifactId>
-                <version>${jackson.version}</version>
-            </dependency>
+      <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>${commons.lang3.version}</version>
+      </dependency>
 
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-annotations</artifactId>
-                <version>${jackson.version}</version>
-            </dependency>
-            <!--jackson end-->
+    </dependencies>
+  </dependencyManagement>
 
-            <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-lang3</artifactId>
-                <version>${commons.lang3.version}</version>
-            </dependency>
-
-        </dependencies>
-    </dependencyManagement>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
 </project>
