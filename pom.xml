@@ -30,6 +30,7 @@
     <modules>
         <module>cache</module>
         <module>util</module>
+        <module>jvm-monitor</module>
     </modules>
 
     <dependencyManagement>
