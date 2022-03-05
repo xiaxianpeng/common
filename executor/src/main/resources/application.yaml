@@ -1,0 +1,8 @@
+executors:
+  configs:
+    - name: taskExecutorService
+      corePoolSize: 8
+      maximumPoolSize: 100
+      keepAlive: 60000
+      queueSize: 2048
+      policy: C
